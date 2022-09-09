@@ -1,6 +1,6 @@
 from random import random, seed
 
-# seed(1029384756)
+seed(1029384756)
 
 # 9  - 0.3 prob
 # 10 - 0.4 prob
@@ -43,6 +43,36 @@ def simulate(newspapers, days):
 
     if newspapers < simPapers:
       simActives += (simPapers - newspapers) * 0.5 # Refund
-    simActives += simPapers * 2.5
+    simActives += simPapers * 2.5 # Selled
+  
+  print(f"### Simulation Results - {newspapers} Newspapers - {days} Days ###")
+  print(f"Actives: {simActives}")
+  print(f"Debt: {simDebt}")
+  print(f"Total profit: {simActives - simDebt}")
 
-simulate(9, 10)
+# Month simulation for 9 newspapers
+simulate(9, 30)
+
+# Year simulation for 9 newspapers
+simulate(9, 365)
+
+# 10 Year simulation for 9 newspapers
+simulate(9, 365 * 10)
+
+# Month simulation for 10 newspapers
+simulate(10, 30)
+
+# Year simulation for 10 newspapers
+simulate(10, 365)
+
+# 10 Year simulation for 10 newspapers
+simulate(10, 365 * 10)
+
+# Month simulation for 11 newspapers
+simulate(11, 30)
+
+# Year simulation for 11 newspapers
+simulate(11, 365)
+
+# 10 Year simulation for 11 newspapers
+simulate(11, 365 * 10)
